@@ -42,5 +42,34 @@ app.delete("/posts/:id", async (req, res) => {
     }
 })
 
+/*app.patch("/todo/complete/:id", async (req, res) => {
+    try {
+        const todo = await Todo.findOne({ _id: req.params.id })
+        todo.complete = !todo.complete;
+        await post.save()
+        res.send(todo)
+    } catch {
+        res.status(404)
+        res.send({ error: "Post doesn't exist!" })
+    }
+}) */
+
+app.put('/todo/complete/:id', async (req, res) => {
+    const todo = await Todo.findByIdAndUpdate(req.params.id);
+    
+
+    if (!todo) {
+        return res.status(404).json({ message: 'User not found' });
+    }
+    else{
+
+        todo.complete = !todo.complete;
+        todo.save();
+        res.json(todo);
+    }
+ 
+});
+
+
 
 app.listen(3001, () => console.log("Server started on port 3000"));
