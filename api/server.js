@@ -32,7 +32,7 @@ app.post('/todo/new', async (req, res) => {
 });
 
 
-app.delete("/posts/:id", async (req, res) => {
+app.delete("/todo/:id", async (req, res) => {
     try {
         await Todo.deleteOne({ _id: req.params.id })
         res.status(204).send('Deleted')
