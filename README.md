@@ -1,7 +1,7 @@
 # To-do-List
 
 First change directory to api 
-change moonge.connect URL to your mongodb atlas api key
+change moongse.connect URL to your mongodb atlas Username and password
 then in the terminal type npm Start to begin the mongodb server
 
 If the connection is succesfull the terminal will say connected to db
