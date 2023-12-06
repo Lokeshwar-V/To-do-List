@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cors());
 
 mongoose
-  .connect("mongodb+srv://Sai1:sai123@cluster0.qlqlmdp.mongodb.net/", {
+  .connect("mongodb+srv://<Username>:<password>@cluster0.qlqlmdp.mongodb.net/", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
