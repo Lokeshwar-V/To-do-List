@@ -2,39 +2,38 @@
 @tailwind components;
 @tailwind utilities;*/
 
-:root{
+:root {
   --primary: red;
-  --secondary:#8A4EFC;
-  --light:#EEE;
-  --light-alt:#61759b;
-  --dark:#131A26;
-  --dark-alt:#202B3E;
+  --secondary: #8a4efc;
+  --light: #eee;
+  --light-alt: #61759b;
+  --dark: #131a26;
+  --dark-alt: #202b3e;
 }
 
-*{
-  margin:0;
+* {
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Fira Sans',sans-serif;
+  font-family: "Fira Sans", sans-serif;
 }
 
-body{
+body {
   background-color: var(--dark-alt);
   color: var(--light);
-
 }
 
-.App{
+.App {
   padding: 32px;
 }
 
-h1{
+h1 {
   font-size: 40px;
-  font-weight:700 ;
+  font-weight: 700;
   margin-bottom: 32px;
 }
 
-h4{
+h4 {
   font-size: medium;
   color: var(--light-alt);
   text-transform: uppercase;
@@ -52,45 +51,49 @@ h4{
   transition: 0.5s;
   cursor: pointer;
   margin-bottom: 16px;
-
 }
 
-.todo:hover{
+.todo:hover {
   opacity: 0.8;
 }
 
-.checkbox{
+.checkbox {
   width: 20px;
   height: 20px;
-  margin-right:16px ;
+  margin-right: 16px;
   border-radius: 999px;
   background-color: var(--dark-alt);
   transition: 0.4s;
 }
 
-.checkbox-selected{
+.checkbox-selected {
   background: rgb(2, 0, 36);
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(105, 121, 9, 1) 35%, rgba(0, 212, 255, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(105, 121, 9, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
 
-.todo .text{
-font-size: 20px;
+.todo .text {
+  font-size: 20px;
 }
 
-.text{
+.text {
   text-decoration: line-through;
 }
 
-.delete-todo{
-  position:absolute;
+.delete-todo {
+  position: absolute;
   top: 50%;
   right: 16px;
   transform: translateY(-50%);
-cursor: pointer;
+  cursor: pointer;
   width: 24px;
   height: 24px;
   color: var(--light);
-  background-color: #AF1F2D;
+  background-color: #af1f2d;
   border-radius: 50%;
 
   display: flex;
@@ -98,7 +101,7 @@ cursor: pointer;
   justify-content: center;
 }
 
-.addpopup{
+.addpopup {
   position: fixed;
   bottom: 32px;
   right: 32px;
@@ -112,67 +115,82 @@ cursor: pointer;
   font-size: 28px;
   font-weight: 900;
   color: var(--light);
-  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(105, 121, 9, 1) 35%, rgba(0, 212, 255, 1) 100%);
-  cursor: pointer;}
 
-  .popup{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+  background: rgb(2, 0, 36);
+  background: radial-gradient(
+    circle,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(113, 9, 121, 1) 46%,
+    rgba(0, 212, 255, 1) 80%
+  );
+  cursor: pointer;
+}
 
-    width: 100%;
-    max-width: 400px;
-    background-color: var(--light);
-    border-radius: 16px;
-    box-shadow: 0px 3px 24px var(--dark);
-  }
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-  .closepopup{
-    position: absolute;
-    top: 16px;
-    right: width;
-    height: 20px;
-    font-size: 20px;
-    color: var(--dark);
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--primary);
-    color: var(--light);
-    border-radius: 50%;
-  }
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--light);
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0px 3px 24px var(--dark);
+}
 
-  .popup h3{
-    color: var(--dark);
-    margin-bottom: 16px;
-    font-weight: 400;
-    text-transform: uppercase;
+.closepopup {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  font-size: 18px;
+  color: var(--dark);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary);
+  color: var(--light);
+  border-radius: 50%;
+}
 
-  }
+.popup h3 {
+  color: var(--dark);
+  margin-bottom: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
 
-  .add-todo-input{
-    appearance: none;
-    border: none;
-    outline: none;
-    background-color: #fff;
-    padding: 16px;
-    border-radius: 16px;
-    box-shadow: 0px 2px 24px rgba(0,0,0,0.2);
-    width: 100%;
-    font-size: 20px;
-  }
+.add-todo-input {
+  appearance: none;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  font-size: 20px;
+}
 
-  .button{
-    padding: 16px 32px;
-    border-radius: 99px;
-    display: inline-block;
-    font-weight:700;
-    text-transform: uppercase;
-    font-size: 18px;
-    margin-top:16px;
-    text-align: center;
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(105, 121, 9, 1) 35%, rgba(0, 212, 255, 1) 100%);
-    cursor: pointer;
-    }
+.button {
+  padding: 16px 32px;
+  border-radius: 99px;
+  display: inline-block;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-top: 16px;
+  text-align: center;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  cursor: pointer;
+}
